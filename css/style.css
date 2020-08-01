@@ -337,7 +337,7 @@ img.ctc:hover{
     footer > section{
         position: relative;bottom:0;
     }
-    img.ctc{width:65px;margin-right:100px;}
+    img.ctc{width:65px;height:65px;margin-right:100px;}
     img.ctc03{margin-right:0;}
 }
 
