@@ -60,7 +60,6 @@ g.text_g{
     stroke-linecap:square; stroke-miterlimit:10;
     opacity:6%;
 }
-.logo_main{}
 g.main_g{
     fill:#0F78F4;
 }
@@ -247,9 +246,6 @@ footer{position: absolute;left:0;bottom:0;}
         display:flex;width:100%;
         align-items: flex-end;
         padding:3% 3% 0 3%;
-    }
-    section.logo_main{
-        /* display:flex; */
     }
     .logo_con{
         position: relative;top:0;transform: translateY(0);
