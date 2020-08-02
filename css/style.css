@@ -1,12 +1,34 @@
 *{margin:0;padding:0;border:0;}
 @font-face { font-family: 'KHNPHD'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KHNPHD.woff') format('woff'); font-weight: normal; font-style: normal; }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 body,html{height:100vh;width:100vw;font-size:14px;}
 main{
     display:flex;height:100vh;width:100vw;justify-content: space-between;
     position:relative;
 }
-nav > a {position:fixed;}
-nav > div {display:none;}
+header{
+    position: fixed;width:100vw;height:70px;
+    z-index:500;
+}
+nav > a {
+    position: absolute;top:50%;right:1%;transform: translateY(-50%);
+}
+nav > a > div{
+    width:32px;height:4px;background-color:#0F78F4;
+    font-size:0;
+}
+nav > a > div:first-child{
+    /* transform:translateY(14px) rotateZ(45deg); */
+}
+nav > a > div:nth-child(2){
+    margin:10px 0;
+}
+nav > a > div:last-child{
+    /* transform:translateY(-14px) rotateZ(-45deg); */
+}
+nav > div {
+    display:none;
+}
 section.hangle_con01{
     display:flex;
     align-items: flex-start;
@@ -118,7 +140,7 @@ g.line_g_outer_b{
     /* width:102%; */
     margin-right:14.4%;
     border-left:2px solid #44454D05;border-right:2px solid #44454D05;
-    animation:lineDraw 1s ease-in-out forwards;
+    animation:opacityDraw 1s ease-in-out forwards;
 }
 .last_horizon{
     margin-right:0;
@@ -128,14 +150,22 @@ g.line_g_outer_b{
     /* width:74px; */
     border-left:2px solid #44454D05;border-right:2px solid #44454D05;
     margin:0 auto;
-    animation:lineDraw 1s ease-in-out forwards;
+    animation:opacityDraw 0.5s ease-in-out forwards;
 }
-@keyframes lineDraw{
+@keyframes opacityDraw{
     from{
         opacity:0;
     }
     to{
         opacity:1;
+    }
+}
+@keyframes unopacityDraw{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
     }
 }
 
@@ -153,13 +183,40 @@ g.line_g_outer_b{
 .line{
     stroke-dasharray:1100;
     stroke-dashoffset: 1100;
-    animation:draw 3s ease-in-out forwards;
+    animation:drawLine 2s ease-in-out forwards;
     /* transform:translateX(50%); */
 }
 
 @keyframes draw{
+    from{
+        stroke-dashoffset: 350;
+    }
     to{
         stroke-dashoffset: 0;
+    }
+}
+@keyframes undraw{
+    from{
+        stroke-dashoffset: 0;
+    }
+    to{
+        stroke-dashoffset: 350;
+    }
+}
+@keyframes drawLine{
+    from{
+        stroke-dashoffset: 1100;
+    }
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes undrawLine{
+    from{
+        stroke-dashoffset: 0;
+    }
+    to{
+        stroke-dashoffset: 1100;
     }
 }
 /*글자의 무게*/
@@ -242,7 +299,16 @@ a.plus_btn > div{
 a.plus_btn > div:last-child{
     transform:rotateZ(90deg);
 }
-
+/*이곳은? 설명영역*/
+.page_intro_con{
+    position:absolute;
+    top:42%;left:10%;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.page_intro_con > dl{color:#44454D;}
+.page_intro_con > dl > dt{font-size:23px;font-weight:700;padding-bottom:30px;opacity:25%;}
+.page_intro_con > dl > dd{font-size:18px;font-weight:400;line-height:36px;letter-spacing:0.5px;opacity:85%;}
+.page_intro_con > dl > dd > span{color:#0F78F4;font-weight:700;}
 
 footer > section{
     display:flex;
@@ -263,6 +329,12 @@ img.ctc:hover{
     html,body{
         width:100%;
     }
+    header{background-color: #0F78F4;}
+    nav > a {
+       right:35px;
+    }
+    nav > a > div{background-color:#fff;
+    }
     main{
         width:100%;
         height:fit-content;
@@ -276,6 +348,7 @@ img.ctc:hover{
         padding:0 3% 3% 3%;
         width:100%;
     }
+    section.hangle_con01 svg{padding-top:30%;}
     section.hangle_con02{
         display:flex;width:100%;
         align-items: flex-end;
@@ -332,6 +405,9 @@ img.ctc:hover{
     }
     .text_weight{
         padding:30px 0;
+    }
+    .page_intro_con{
+        top:3%;left:15%;
     }
     footer{
         display:flex;justify-content: center;margin:0;
