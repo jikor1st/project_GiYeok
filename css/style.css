@@ -338,7 +338,7 @@ img.ctc:hover{
         background: -moz-linear-gradient(top, rgba(15,120,244,1) 0%, rgba(62,143,238,0.75) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top, rgba(15,120,244,1) 0%,rgba(62,143,238,0.75) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom, rgba(15,120,244,1) 0%,rgba(62,143,238,0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter:drop-shadow(0 15px 20px #0f7af477);}
+        filter:drop-shadow(0 7px 10px #0f7af477);}
     nav > a {
        right:35px;
     }
