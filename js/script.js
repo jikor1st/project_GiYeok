@@ -30,6 +30,8 @@ function reset(){
     txt_sub[1].innerText = "20";
     txt_sub[1].style.opacity = "0";
     txt_main.innerText = "19";
+    plusbtn.style.opacity="0";
+    plusbtn.style.cursor="default";
 }
 
 function onClickMinusBtn(e){
@@ -79,13 +81,21 @@ function textChange(){
 
     if(textWidth == 19){
         txt_sub[1].style.opacity = "0";
+        plusbtn.style.opacity="0";
+        plusbtn.style.cursor="default";
     }
     else if(textWidth == 1){
         txt_sub[0].style.opacity = "0";
+        minusbtn.style.opacity="0";
+        minusbtn.style.cursor="default";
     }
     else{
         txt_sub[0].style.opacity = "10%";
         txt_sub[1].style.opacity = "10%";
+        plusbtn.style.opacity="1";
+        minusbtn.style.opacity="1";
+        plusbtn.style.cursor="pointer";
+        minusbtn.style.cursor="pointer";
     }
 }
 plusbtn.addEventListener("click", onClickPlusBtn);
