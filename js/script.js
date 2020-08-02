@@ -26,27 +26,70 @@ function reset(){
     for(let i=0;i<textG.length;i++){
         textG[i].style.strokeWidth = "19";
     }
+    txt_sub[0].innerText = "18";
+    txt_sub[1].innerText = "20";
+    txt_sub[1].style.opacity = "0";
+    txt_main.innerText = "19";
 }
 
 function onClickMinusBtn(e){
     e.preventDefault();
-    textWidth--;
+    if(textWidth > 1){
+        textWidth--;
+        console.log(textWidth);
+    }
     textWidthChange();
+    textChange();
 }
 function onClickPlusBtn(e){
     e.preventDefault();
-    textWidth++;
+    if(textWidth < 19){
+        textWidth++;
+        console.log(textWidth);
+    }
     textWidthChange();
+    textChange();
 }
-
-plusbtn.addEventListener("click", onClickPlusBtn);
-minusbtn.addEventListener("click", onClickMinusBtn);
-
 function textWidthChange(){
     for(let i=0;i<textG.length;i++){
         textG[i].style.strokeWidth = textWidth;
     }
 }
+function textChange(){
+    if(textWidth <= 9){
+        txt_main.innerText = "0" + textWidth;
+        txt_sub[0].innerText = "0" + (textWidth - 1);
+        if(textWidth == 9){
+            txt_sub[1].innerText = textWidth + 1;
+        }
+        else{
+            txt_sub[1].innerText = "0" + (textWidth + 1);
+        }
+    }
+    if(textWidth == 10){
+        txt_main.innerText = textWidth;
+        txt_sub[0].innerText = "0" + (textWidth - 1);
+        txt_sub[1].innerText = textWidth + 1;
+    }
+    if(textWidth >= 11){
+        txt_main.innerText = textWidth;
+        txt_sub[0].innerText = textWidth - 1;
+        txt_sub[1].innerText = textWidth + 1;
+    }
+
+    if(textWidth == 19){
+        txt_sub[1].style.opacity = "0";
+    }
+    else if(textWidth == 1){
+        txt_sub[0].style.opacity = "0";
+    }
+    else{
+        txt_sub[0].style.opacity = "10%";
+        txt_sub[1].style.opacity = "10%";
+    }
+}
+plusbtn.addEventListener("click", onClickPlusBtn);
+minusbtn.addEventListener("click", onClickMinusBtn);
 
 function onClickRedrawBtn(e){
     e.preventDefault();
