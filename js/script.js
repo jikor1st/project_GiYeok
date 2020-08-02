@@ -4,6 +4,7 @@ const minusbtn = document.querySelector(".minus_btn");
 const plusbtn = document.querySelector(".plus_btn");
 const textG = document.querySelectorAll(".text_g");
 const redrawbtn = document.querySelector(".redraw_btn");
+
 var horizon_line_outer = document.querySelectorAll(".horizon_line_outer");
 horizon_line_outer = Array.prototype.slice.call(horizon_line_outer);
 var horizon_line_inner = document.querySelectorAll(".horizon_line_inner");
@@ -14,6 +15,11 @@ var st1 = document.querySelectorAll(".st1");
 st1 = Array.prototype.slice.call(st1);
 var line = document.querySelectorAll(".line");
 line = Array.prototype.slice.call(line);
+
+const txt_main = document.querySelector(".w_txt_main");
+var txt_sub = document.querySelectorAll(".w_txt_sub");
+txt_sub = Array.prototype.slice.call(txt_sub);
+
 let textWidth = 19;
 reset();
 function reset(){
