@@ -340,9 +340,15 @@ g.line_g_outer_b{
     font-size:130%;
     
 }
+.text_weight_con > h3{
+    font-family: 'KHNPHD';
+}
 .text_weight{
     display:flex;align-items:center;justify-content: space-between;
     padding:30px 0;
+}
+.text_weight > p{
+    font-family: 'KHNPHD';
 }
 @media screen and (max-width:1400px){
     .text_weight_con{
@@ -378,7 +384,7 @@ a.redraw_btn{
     transition:opacity 0.7s ease;
 }
 a.redraw_btn > div{display:flex;justify-content:space-evenly;}
-a.redraw_btn > div > p {color:white;}
+a.redraw_btn > div > p {color:white;font-family: 'KHNPHD';}
 svg.redraw_svg{
     transform: translateY(25%);
 }
