@@ -209,6 +209,7 @@ h2.logo_text{
     margin-left:50%;transform:translateX(-50%);
 }
 h2.logo_text > span{
+    font-family: 'KHNPHD';
     opacity:25%;margin-left:-13px;
     color:white;
 }
